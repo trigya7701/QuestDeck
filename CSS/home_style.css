@@ -1,0 +1,67 @@
+/* Navbar */
+
+
+.navbar-theme{
+    background-color: #EE1C24;
+   
+}
+.navbar-toggle-btn{
+    background-color: #F8F9FA;
+    
+}
+
+.navbar-content{
+    color: white;
+    padding: 0 2%;
+   
+}
+.navbar-header{
+    display: flex;
+}
+.navbar-form{
+    margin:0 3%;
+    flex: 2;
+    
+    
+}
+.navbar-searchbar{
+    background-color: #F8F9FA;
+    width: 100%;
+    
+}
+
+
+
+/* Main-Section */
+
+.main{
+    display: flex;
+    margin:5% 3%;
+}
+
+/* Posts section */
+
+.posts-content{
+   
+    flex:2;
+    display: flex;
+    background-color: #F8F9FA;
+    flex-direction: column;
+    margin:0 3%;
+    
+}
+.posts-header{
+   
+    margin: auto;
+    margin-top: 2%;
+    width: 20%;
+    
+}
+
+.post-theme{
+    margin: 2% 3%;
+    background-color: #BFA2DB;
+    
+}
+
+
