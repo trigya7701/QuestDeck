@@ -18,15 +18,19 @@
             <?php
 
             // Navbar
-            include '../components/navbar.php';?>
+            include '../components/navbar.php';
+            include '../components/bookmark.php';
+            ?>
+            
 
             <div class="main row">
-                <div class="col-lg-8">
+              
+                <div class="col-lg-9">
                     <?php include '../components/posts.php'; ?>
                 </div>
                 <!-- // Posts -->
                 
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <?php include '../components/searchBar.php'; ?>
                 </div>
 
