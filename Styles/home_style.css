@@ -1,35 +1,3 @@
-/* Navbar */
-
-
-.navbar-theme{
-    background-color: #EE1C24;
-   
-}
-.navbar-toggle-btn{
-    background-color: #F8F9FA;
-    
-}
-
-.navbar-content{
-    color: white;
-    padding: 0 2%;
-   
-}
-.navbar-header{
-    display: flex;
-}
-.navbar-form{
-    margin:0 2%;
-    flex: 0.9;
-    
-    
-}
-.navbar-searchbar{
-    background-color: #F8F9FA;
-    width: 100%;
-    
-}
-
 /* Bookmark section */
 
 .bookmark-section{
@@ -80,5 +48,3 @@ Search Bar section */
     background-color: #F8F9FA;
     padding: 2% 3%;
 }
-
-

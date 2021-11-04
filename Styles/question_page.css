@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* hello */
 .main
 {
     display: flex;
@@ -17,7 +18,7 @@
     height: 3px;
     width: 100%;
     background: black;
-    margin: 10px 0px;
+    margin: 0px 0px;
 }
 .rightbox
 {
@@ -26,6 +27,7 @@
     align-items: center;
     justify-content: flex-end;
     /* background: greenyellow; */
+    margin-top: 10px;
     margin-right: 20px;
 }
 .rightbox input
@@ -66,7 +68,6 @@ textarea
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* margin-right: 5px; */
 }
 .buttons input
 {
@@ -85,10 +86,6 @@ textarea
     min-height: 139vh;
     position: absolute;
     display: none;
-}
-.mainpopup
-{
-    display: block;
 }
 .cancel
 {

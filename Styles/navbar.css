@@ -1,0 +1,40 @@
+.navbar-theme{
+    background-color: #EE1C24; 
+}
+.navbar-toggle-btn{
+    background-color: #F8F9FA;
+    
+}
+
+.navbar-content{
+    color: white;
+    padding: 0 2%;
+   
+}
+.navbar-header{
+    display: flex;
+}
+.navbar-form{
+    margin:0 2%;
+    flex: 0.9;
+    
+    
+}
+.navbar-searchbar{
+    background-color: #F8F9FA;
+    width: 100%;
+    
+}
+.navbar-toggler-icon
+{
+    background: black;
+}
+.navbar-toggler-icon i
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+}

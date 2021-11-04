@@ -1,12 +1,12 @@
-
-
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="../Styles/navbar.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 <nav class="navbar navbar-expand-lg   navbar-theme ">
   <div class="container-fluid">
-    <a class="navbar-brand navbar-content" href="#">QuestDeck</a>
+    <a class="navbar-brand navbar-content" href="../Pages/home.php">QuestDeck</a>
   
     <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon navbar-toggle-btn"></span>
+      <span class="navbar-toggler-icon navbar-toggle-btn"><i class="bi bi-list"></i></span>
     </button>
     <div class="collapse navbar-collapse navbar-header" id="navbarSupportedContent">
 
@@ -17,11 +17,11 @@
       </form>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active navbar-content" aria-current="page" href="#">Home</a>
+          <a class="nav-link active navbar-content" aria-current="page" href="../Pages/home.php">Home</a>
           
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-content" href="#">Create Post</a>
+          <a class="nav-link navbar-content" href="../Pages/question_page.php">Create Post</a>
           
         </li>
         <li class="nav-item">
