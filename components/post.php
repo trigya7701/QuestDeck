@@ -8,7 +8,7 @@
         this is first post on QuestDeck</span>
     </h5>
     
-    <a href="#" class="btn btn-danger btn-sm">View Post</a>
+    <a href="../pages/view_post.php" class="btn btn-danger btn-sm">View Post</a>
   </div>
 </div>
 
@@ -20,7 +20,7 @@
         this is first post on QuestDeck</span>
     </h5>
     
-    <a href="#" class="btn btn-danger btn-sm">View Post</a>
+    <a href="../pages/view_post.php" class="btn btn-danger btn-sm">View Post</a>
   </div>
 </div>
 <div class="card post-theme">
@@ -31,7 +31,7 @@
         this is first post on QuestDeck</span>
     </h5>
     
-    <a href="#" class="btn btn-danger btn-sm">View Post</a>
+    <a href="../pages/view_post.php" class="btn btn-danger btn-sm">View Post</a>
   </div>
 </div>
 
