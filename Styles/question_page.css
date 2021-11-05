@@ -74,6 +74,16 @@ textarea
     margin: 0px 10px;
     padding: 5px 5px;
 }
+#tipper
+{
+    border: none;
+    background: grey;
+    border-radius: 0.5rem;
+}
+/* #tipper:focus
+{
+    border: 5px solid black;
+} */
 .mainpopup
 {
     background: grey;
