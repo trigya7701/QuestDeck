@@ -18,10 +18,10 @@
     </div>
     <div class="container">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-lg-3 col-sm-4 col-5 ">
       <img src="../Images/profile.jpeg" alt="Trigya">
     </div>
-    <div class="col flex-column mar">
+    <div class="col-lg-4 col-sm-8  col-6 flex-column mar">
       <h1>rr701</h1>
       <!-- title -->
       <p>I am a coder</p>
@@ -37,12 +37,13 @@
       </div>
       <!-- <p><i>Member since 1 year</i><i>Last visited on </i></p> -->
     </div>
-    <div class="col flex-column">
+    <div class="col-lg-4  flex-column">
       <h3>About</h3>
       <p>I am Trigya Roy. Who lives in shrinagar. You can follow me to get updates of shrinagar</p>
     </div>
   </div>
 </div>
+
 <div class="stats-data">
 <h4>Stats</h4>
 <div class="stats">
