@@ -1,0 +1,240 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.main
+{
+    box-shadow: 0 0 15px black;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    position: relative;
+}
+.main1
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.left
+{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: red;
+    border-radius: .5em;
+    z-index: 2;
+    height: 100%;
+    transition: 1.5s ease-in-out;
+}
+.right
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: 1.5s ease-in-out;
+}
+.right h2
+{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 10px;
+}
+input
+{
+    margin: 10px 0px;
+}
+input[type="submit"]
+{
+    padding: 10px 10px;
+    margin-bottom: 50px;
+    /* width: 80px; */
+    border-radius: 2.5rem;
+}
+input[type="submit"]:focus
+{
+    outline: none;
+}
+.main2
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
+.lefts
+{
+    position: relative;
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+    opacity: 0;
+    height: 100%;
+    transition: 1.5s ease-in-out;
+}
+.rights
+{
+    display: flex;
+    right: 100px;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    height: 100%;
+    transition: 1.5s ease-in-out;
+}
+.active .left
+{
+    z-index: 2;
+    width: 50%;
+    transform: translateX(100%);
+    transition: 1.5s ease-in-out;
+    opacity: 0;
+}
+.now
+{
+    overflow: hidden;
+}
+.active.now   .left
+{
+    width: 35%;
+    transform: translateX(200%);
+    transition: 1.5s ease-in-out;
+}
+.active .right
+{
+    width: 70%;
+    transform: translateX(-50%);
+    transition: 1.5s ease-in-out;
+    opacity: 0;
+    z-index: 1;
+}
+.active .main2
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.active .lefts
+{
+    background: red;
+    height: 100%;
+    z-index: 4;
+    left: 0px;
+    width: 50%;
+    transform: translateX(100%);
+    transition: 1.5s ease-in-out;
+    opacity: 1;
+
+}
+.active.now  .lefts
+{
+    width: 35%;
+    transform: translateX(200%);
+    transition: 1.5s ease-in-out;
+}
+.active .rights
+{
+    width: 70%;
+    left: 0px;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: 1.5s ease-in-out;
+    opacity: 1;
+}
+.not-active .left
+{
+    background: red;
+    height: 100%;
+    z-index: 4;
+    left: 0px;
+    width: 50%;
+    transform: translateX(10%);
+    transition: 1.5s ease-in-out;
+    opacity: 1;
+
+}
+.not-active.now  .left
+{
+    width: 30%;
+    transform: translateX(0%);
+    transition: 1.5s ease-in-out;
+    z-index: 2;
+}
+.not-active .right
+{
+    width: 70%;
+    transform: translateX(0%);
+    z-index: 2;
+    transition: 1.5s ease-in-out;
+    opacity: 1;
+}
+.not-active .lefts
+{
+    height: 100%;
+    z-index: 1;
+    left: 0px;
+    width: 50%;
+    transform: translateX(10%);
+    transition: 1.5s ease-in-out;
+    opacity: 0;
+}
+.not-active.now  .lefts
+{
+    width: 30%;
+    transform: translateX(0%);
+    transition: 1.5s ease-in-out;
+}
+.not-active .rights
+{
+    width: 70%;
+    transform: translateX(0%);
+    z-index: 1;
+    transition: 1.5s ease-in-out;
+    opacity: 0;
+}
+@media screen and (max-width: 1600px) and (min-width: 1200px) {
+    .main
+    {
+        width: 65%;
+    }
+  }
+input[type="text"],input[type="email"],input[type="password"]
+{
+    background: silver;
+    padding: 10px 10px;
+    border-radius: .5em;
+}

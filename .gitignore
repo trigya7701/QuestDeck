@@ -1,3 +1,7 @@
+/Pages/signin.html
+/Scripts/signin.js
+/Styles/signin.css
+
 # Compiled class file
 *.class
 
@@ -9,7 +13,6 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-./Scripts
 # Package Files #
 *.jar
 *.war
