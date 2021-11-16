@@ -17,3 +17,6 @@
 .comment{
     margin: 3% 4%;
 }
+.comment-err{
+    color:red;
+}

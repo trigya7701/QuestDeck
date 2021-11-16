@@ -114,6 +114,7 @@
                     <?php
                         if($fname==0 && $uname==0 && $email==0 && $password==0)
                         {
+                            
                             include 'connection.php';
                             if(isset($_POST["signup"]))
                             {

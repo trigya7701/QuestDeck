@@ -29,23 +29,23 @@
                     if($q_title!=''){
                         
                         if(!preg_match("^[a-zA-Z\s]+$^",$q_title)){
-                            $q_titleError="Please enter a valid question title";
+                            $q_titleError="* Please enter a valid question title";
                         }
                         
                     }
                     else{
-                        $q_titleError="Please Enter the Question title";
+                        $q_titleError="* Please Enter the Question title";
                     }
 
                     if($q_desc!=''){
                         
                         if(!preg_match("^[a-zA-Z\s]+$^",$q_desc)){
-                            $q_descError="Please enter a valid question description";
+                            $q_descError="* Please enter a valid question description";
                         }
                         
                     }
                     else{
-                        $q_descError="Please elaborate your question.";
+                        $q_descError="* Please elaborate your question.";
                     }
 
                     if($q_titleError=="" && $q_descError==""){
@@ -162,9 +162,10 @@
                         <p class="err-design"><?php   echo"$q_descError"; ?></p>
 
                     </div>
-
-                    <input type="submit" class="btn btn-danger btn-sm" value="Reset" name="reset"></input>
-                    <input type="submit" class="btn btn-danger btn-sm" value="Submit" name="submit"></input>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <input type="submit" class="btn btn-danger " value="Reset" name="reset"></input>
+                        <input type="submit" class="btn btn-danger " value="Post" name="submit"></input>
+                    </div>
                 </div>
             </form>
 
