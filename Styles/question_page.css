@@ -4,6 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+.err-design
+{
+    color:red;
+    margin-bottom: 2%;
+    
+} 
+
 /* hello */
 .main
 {
@@ -109,3 +116,5 @@ textarea
     width: 50%;
     background: chocolate;
 }
+
+

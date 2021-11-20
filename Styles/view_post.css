@@ -12,8 +12,11 @@
 /* Comments section */
 
 .comment-header{
-    margin-top: 2%;
+    margin: 2% 4%;
 }
 .comment{
-    margin: 3% 0;
+    margin: 3% 4%;
+}
+.comment-err{
+    color:red;
 }

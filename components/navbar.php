@@ -26,7 +26,7 @@
       <form class="d-flex navbar-form">
           
         <input class="form-control me-2 navbar-searchbar" type="search" placeholder="Search Posts" aria-label="Search">
-        <button class="btn btn-light btn" type="submit">Search</button>
+        <button class="btn btn-light btn-sm" type="submit">Search</button>
       </form>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
