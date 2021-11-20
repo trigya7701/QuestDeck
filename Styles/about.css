@@ -1,0 +1,120 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.desc
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    /* background: chartreuse; */
+}
+.line
+{
+    height: 4px;
+    width: 80%;
+    background: cyan;
+    border-radius: .5em;
+    margin: 10px 0px;
+}
+.one
+{
+    width: 80%;
+}
+.cards-values
+{
+    /* background: chartreuse; */
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: darkblue; */
+}
+.col
+{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+.card-header
+{
+    font-size: 30px;
+}
+.us
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.trigya,.ram
+{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: greenyellow; */
+    position: relative;
+}
+.back
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: gray;
+}
+.img
+{
+    position: absolute;
+    left: 50px;
+    height: 80%;
+    width: 30%;
+    /* margin-top: 20%; */
+    /* margin-left: 50px;
+    width: 45%;
+    height: 120%; */
+    display: flex;
+    /* flex: 1 1 20px; */
+    background: #e8e9ee;
+}
+img
+{
+    padding: 10px 50px;
+    width: 100%;
+}
+.social
+{
+    position: absolute;
+    right: 10px;
+    /* background: chartreuse; */
+    display: flex;
+    flex-direction: column;
+}
+.social h1
+{
+    border-radius: 50%;
+    padding: 10px 10px;
+    /* background: white; */
+}
+.details
+{
+    position: absolute;
+    border: 4px solid goldenrod;
+    margin-left: -10px;
+    background: white;
+    padding: 10px 10px;
+}

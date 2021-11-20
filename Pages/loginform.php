@@ -9,6 +9,9 @@
     <script src="../Scripts/loginform.js"></script>
 </head>
 <body>
+    <?php
+        session_start();
+    ?>
     <div class="container">
         <div class="main" id="main">
             <div class="main1" id="signup">
@@ -181,12 +184,18 @@
                                         $row=mysqli_fetch_assoc($result);
                                         if(hash('sha256',$password)==$row['user_password'])
                                         {
-                                            echo "true";
+                                            $_SESSION["Id"]=$row["user_id"];
+                                            $_SESSION["name"]=$row["user_mainname"];
+                                            header("Location:home.php");
                                         }
                                         else
                                         {
-                                            echo "false";
+                                            echo "The Password is Incorrect!";
                                         }
+                                    }
+                                    else
+                                    {
+                                        echo "The username or password is incorrect";
                                     }
                                 }
                             }

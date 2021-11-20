@@ -55,11 +55,12 @@ img
 .stats
 {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     margin: 0px 10px;
     padding: 8px 5px;
     box-shadow: 0px 0px 3px grey;
     border-radius: 1rem;
+    /* background: chocolate; */
 }
 .stats > div
 {
@@ -72,3 +73,94 @@ img
 {
     margin: 0px 0px;
 }
+.edit-profile
+{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 10px;
+    padding: 0px 3%;
+    /* background: gray; */
+    display: none;
+}
+
+.active
+{
+    display: flex;
+}
+.line
+{
+    height: 3px;
+    width: 100%;
+    background: black;
+    margin-bottom: 25px;
+}
+.information
+{
+    box-shadow: 0px 0px 3px grey;
+    border-radius: 1rem;
+    padding: 8px 10px;
+    /* background: gray; */
+    padding-bottom: 25px;
+}
+.information img
+{
+    width: 200px;
+    height: 200px;
+}
+.information h5
+{
+    margin-top: 6px;
+}
+.information input[type=text]
+{
+    padding: .45em 0.45em;
+    width: 50%;
+}
+.link
+{
+    margin-top: 12px;
+    /* padding: 0px 3%; */
+    width: 100%;
+    /* background: goldenrod; */
+}
+.links
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* margin: 0px 10px; */
+    padding: 8px 5px;
+    box-shadow: 0px 0px 3px grey;
+    border-radius: 1rem;
+    /* margin-top: 12px; */
+}
+.links > div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.links input[type=text]
+{
+    padding: .30em 0.45em;
+    width: 90%;
+}
+.end
+{
+    display: flex;
+    margin: 15px 0px;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background: chocolate; */
+    width: 100%;
+}
+/* form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+} */
