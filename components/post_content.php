@@ -35,7 +35,7 @@
             }
             else{
                 echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                        <strong>Failed!</strong> Your answer was not posted .
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>';
             }
@@ -43,6 +43,41 @@
     }
 
 
+    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['bookmark'])){
+
+        $user_id=4;
+        
+        $sqlcheckBookmark="SELECT * FROM `bookmark_posts` WHERE user_id='$user_id' AND q_id='$q_id'";
+        $resultcheckBookmark=mysqli_query($conn,$sqlcheckBookmark);
+
+        $num=mysqli_num_rows($resultcheckBookmark);
+        if($num==1){
+            echo'<div class="alert alert-info alert-dismissible fade show" role="alert">
+            Question aldready added  .
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+        else{
+
+        
+
+                $sqlBookmark="INSERT INTO `bookmark_posts` (`user_id`, `q_id`) VALUES ('4','$q_id' )";
+                $resultBookmark=mysqli_query($conn,$sqlBookmark);
+
+                if($resultBookmark){
+                    echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success!</strong> Question added to bookmark posts .
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+                }
+                else{
+                    echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Failed!</strong> You should check in on some of those fields below.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>';
+                }
+        }
+    }
 
 
 
@@ -56,12 +91,9 @@
             <h5 class="card-title"><?php  echo $row['q_title']; ?></h5>
             <p class="card-text"><?php  echo $row['q_desc']; ?></p>
             <p class="card-text"><small class="text-muted">Posted on <?php  echo $row['q_timestamp']; ?> </small></p>
-            <?php
-            if($flag==1)
-            {
-                echo '<button type="button" class="btn btn-danger btn-sm">Add to Bookmarks</button>';
-            }
-            ?>
+            <form action="" method="POST">
+                <button type="submit" class="btn btn-danger btn-sm" name="bookmark">Add to Bookmarks</button>
+            </form>
         </div>
 
     </div>
