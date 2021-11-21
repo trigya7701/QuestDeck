@@ -116,5 +116,10 @@ textarea
     width: 50%;
     background: chocolate;
 }
-
+.modal-dialog
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 

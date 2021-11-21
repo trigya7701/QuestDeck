@@ -20,7 +20,10 @@
 
             // Navbar
             include '../components/navbar.php';
-            include '../components/bookmark.php';
+            if($flag==1)
+            {
+              include '../components/bookmark.php';
+            }
             ?>
             
 

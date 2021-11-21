@@ -40,27 +40,56 @@
                 </h5>
                 <p><?php echo $row["c_desc"];?></p>
                 <form action="" method="POST">
-                    <button name="like" type="submit" class="btn btn-light btn-sm position-relative">
+                    <?php
+                if($flag==1)
+                {
+                    echo '<button name="like" type="submit" class="btn btn-light btn-sm position-relative">
                         <img src="../images/like-icon.png" alt="Like Icon" />
                         <span class="badge bg-danger">
                             <?php
-                                                if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['like'])){
+                                                if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["like"])){
 
-                                                    $newLikes=$row['c_likes']+1;
-                                                    $id=$row['c_id'];
-                                                    $sql1="UPDATE `comments` SET `c_likes` ='$newLikes'
-                                                    WHERE `comments`.`c_id` = '$id'";
+                                                    $newLikes=$row["c_likes"]+1;
+                                                    $id=$row["c_id"];
+                                                    $sql1="UPDATE `comments` SET `c_likes` ="$newLikes"
+                                                    WHERE `comments`.`c_id` = "$id"";
 
-                                                    $result1=mysqli_query($conn,$sql1);
+$result1=mysqli_query($conn,$sql1);
 
 
-                                                }
-                                            
-                                                
-                                        ?>
+}
+
+
+?>
                             <?php  echo $row["c_likes"] ?>
                         </span>
-                    </button>
+                    </button>';
+                }
+                else
+                {
+                    echo '<button name="like" type="submit" class="btn btn-light btn-sm position-relative" disabled="disabled">
+                        <img src="../images/like-icon.png" alt="Like Icon" />
+                        <span class="badge bg-danger">
+                            <?php
+                                                if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["like"])){
+
+                                                    $newLikes=$row["c_likes"]+1;
+                                                    $id=$row["c_id"];
+                                                    $sql1="UPDATE `comments` SET `c_likes` ="$newLikes"
+                                                    WHERE `comments`.`c_id` = "$id"";
+
+$result1=mysqli_query($conn,$sql1);
+
+
+}
+
+
+?>
+                            <?php  echo $row["c_likes"] ?>
+                        </span>
+                    </button>';
+                }
+                ?>
                 </form>
 
             </div>

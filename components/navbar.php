@@ -1,14 +1,12 @@
 <?php
+  $flag=0;
   session_start();
 ?>
 <?php
   if(isset($_SESSION["name"]))
   {
     $name=$_SESSION["name"];
-  }
-  else
-  {
-    header("Location:../Pages/loginform.php");
+    $flag=1;
   }
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -33,25 +31,44 @@
           <a class="nav-link active navbar-content" aria-current="page" href="../Pages/home.php">Home</a>
           
         </li>
+        <?php
+          if ($flag==1)
+          {
+            echo '<li class="nav-item">
+            <a class="nav-link navbar-content" href="../Pages/question_page.php">Create Post</a>
+          </li>';
+          }
+          else
+          {
+            echo '<li class="nav-item">
+            <a class="nav-link navbar-content" href="">Create Post</a>
+          </li>';
+          }
+        ?>
         <li class="nav-item">
-          <a class="nav-link navbar-content" href="../Pages/question_page.php">Create Post</a>
-          
+          <a class="nav-link navbar-content" href="../Pages/about.php">About Us</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link navbar-content" href="#">About Us</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle  navbar-content" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Hi,<?php echo " $name" ?> 
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../Pages/profile.php">My Account</a></li>
-            
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="../Pages/logout.php">Logout</a></li>
-          </ul>
-        </li>
+        <?php
+          if ($flag==1)
+          {
+            echo '<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  navbar-content" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hi, '.$name.'
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="../Pages/profile.php">My Account</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../Pages/logout.php">Logout</a></li>
+              </ul>
+            </li>';
+          }
+          else
+          {
+            echo '<li class="nav-item">
+            <a class="nav-link navbar-content" href="../Pages/loginform.php">Login</a>
+          </li>';
+          }
+        ?>
 
     
 
