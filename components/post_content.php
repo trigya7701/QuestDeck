@@ -1,6 +1,7 @@
 <?php
 
     $q_id=$_GET['q_id'];
+   
 
     include '../pages/connection.php';
     $sql="SELECT * FROM `questions` WHERE q_id=$q_id";
@@ -45,8 +46,8 @@
 
     if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['bookmark'])){
 
-        $user_id=$_SESSION["Id"];
         
+        $user_id=$_SESSION["Id"];
         $sqlcheckBookmark="SELECT * FROM `bookmark_posts` WHERE user_id='$user_id' AND q_id='$q_id'";
         $resultcheckBookmark=mysqli_query($conn,$sqlcheckBookmark);
 
@@ -58,7 +59,7 @@
             </div>';
         }
         else{
-        $user_id=$_SESSION["Id"];
+        
 
                 $sqlBookmark="INSERT INTO `bookmark_posts` (`user_id`, `q_id`) VALUES ('$user_id','$q_id' )";
                 $resultBookmark=mysqli_query($conn,$sqlBookmark);
@@ -78,6 +79,26 @@
         }
     }
 
+    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['remove'])){
+        $user_id=$_SESSION["Id"];
+
+       $sqlremoveBookmark="DELETE FROM `bookmark_posts` WHERE user_id='$user_id' AND q_id='$q_id'";
+       $resultremoveBookmark=mysqli_query($conn,$sqlremoveBookmark);
+
+       if($resultremoveBookmark){
+        echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Question removed from bookmark posts .
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
+       }
+       else{
+        echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Failed!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>';
+       }
+    }
+
 
 
 ?>
@@ -91,7 +112,24 @@
             <p class="card-text"><?php  echo $row['q_desc']; ?></p>
             <p class="card-text"><small class="text-muted">Posted on <?php  echo $row['q_timestamp']; ?> </small></p>
             <form action="" method="POST">
-                <button type="submit" class="btn btn-danger btn-sm" name="bookmark">Add to Bookmarks</button>
+
+                <?php
+                 if($flag==1){
+                    $user_id=$_SESSION["Id"];
+                    $sqlbuttonType="SELECT * FROM `bookmark_posts` WHERE user_id='$user_id' AND q_id='$q_id'";
+                    $resultbuttonType=mysqli_query($conn,$sqlbuttonType);
+
+                    $num=mysqli_num_rows($resultbuttonType);
+                    if($num==0){
+                        echo'<button type="submit" class="btn btn-danger btn-sm" name="bookmark">Add to Bookmarks</button>';
+                    }
+                    else{
+                        echo'<button type="submit" class="btn btn-danger btn-sm" name="remove">Remove Bookmark</button>';
+                    }
+                }
+
+                ?>
+                
             </form>
         </div>
 

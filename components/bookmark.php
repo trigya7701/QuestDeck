@@ -35,12 +35,7 @@
                                         $rowQuestion=mysqli_fetch_assoc($resultQuestions);
                                         $postUrl="../pages/view_post.php?q_id=".$q_id;
                                         echo'<a href="'.$postUrl.'" class="list-group-item list-group-item-action">'.$rowQuestion['q_title'].' 
-                                                <span>
-                                                <form action="" method="POST">
-                                               <button
-                                                type="submit" class="btn btn-primary btn-sm" name="remove" onClick="remover('.$q_id.')">Remove</button>
-                                                </form>
-                                                </span></a>';
+                                                </a>';
 
                                                 
                                     }

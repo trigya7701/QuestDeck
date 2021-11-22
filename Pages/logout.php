@@ -6,7 +6,7 @@
     {
         session_unset();
         session_destroy();
-        header("Location:../Pages/loginform.php");
+        header("Location:../Pages/home.php");
     }
     else
     {
