@@ -1,0 +1,31 @@
+/* .card
+{
+    min-height: 100vh;
+} */
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.fields,.card-body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-body
+{
+    flex-direction: column;
+}
+input[type="text"]
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    width: 25px;
+    margin: 20px 10px;
+    padding: 0px 7px;
+}

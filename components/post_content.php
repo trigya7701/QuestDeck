@@ -23,7 +23,7 @@
         }
         else{
             $sql="INSERT INTO `comments` ( `c_desc`, `user_id`, `q_id`, `c_likes`)
-             VALUES ('$c_desc', $u_id, '$q_id', '0')";
+             VALUES ('$c_desc', '$u_id', '$q_id', '0')";
 
             $result=mysqli_query($conn,$sql);
 
@@ -45,7 +45,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['bookmark'])){
 
-        $user_id=4;
+        $user_id=$_SESSION["Id"];
         
         $sqlcheckBookmark="SELECT * FROM `bookmark_posts` WHERE user_id='$user_id' AND q_id='$q_id'";
         $resultcheckBookmark=mysqli_query($conn,$sqlcheckBookmark);
@@ -58,10 +58,9 @@
             </div>';
         }
         else{
+        $user_id=$_SESSION["Id"];
 
-        
-
-                $sqlBookmark="INSERT INTO `bookmark_posts` (`user_id`, `q_id`) VALUES ('4','$q_id' )";
+                $sqlBookmark="INSERT INTO `bookmark_posts` (`user_id`, `q_id`) VALUES ('$user_id','$q_id' )";
                 $resultBookmark=mysqli_query($conn,$sqlBookmark);
 
                 if($resultBookmark){

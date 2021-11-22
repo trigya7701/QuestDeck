@@ -17,7 +17,7 @@
 
 
                             include "../pages/connection.php";
-                            $user_id=4;
+                            $user_id=$_SESSION["Id"];
                             $sql="SELECT * FROM `bookmark_posts` WHERE user_id='$user_id'";
                             $result=mysqli_query($conn,$sql);
 
