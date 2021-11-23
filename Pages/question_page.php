@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<?php
+    <?php
     include "../components/navbar.php";
     ?>
     <?php
@@ -29,27 +29,27 @@
                     $q_desc=$_POST['q_desc'];
 
                 
-                    // if($q_title!=''){
+                    if($q_title!=''){
                         
-                    //     if(!preg_match("^[a-zA-Z\s]+$^",$q_title)){
-                    //         $q_titleError="* Please enter a valid question title";
-                    //     }
+                        if(!preg_match("^[a-zA-Z\s]+$^",$q_title)){
+                            $q_titleError="* Please enter a valid question title";
+                        }
                         
-                    // }
-                    // else{
-                    //     $q_titleError="* Please Enter the Question title";
-                    // }
+                    }
+                    else{
+                        $q_titleError="* Please Enter the Question title";
+                    }
 
-                    // if($q_desc!=''){
+                    if($q_desc!=''){
                         
-                    //     if(!preg_match("^[a-zA-Z\s]+$^",$q_desc)){
-                    //         $q_descError="* Please enter a valid question description";
-                    //     }
+                        if(!preg_match("^[a-zA-Z\s]+$^",$q_desc)){
+                            $q_descError="* Please enter a valid question description";
+                        }
                         
-                    // }
-                    // else{
-                    //     $q_descError="* Please elaborate your question.";
-                    // }
+                    }
+                    else{
+                        $q_descError="* Please elaborate your question.";
+                    }
 
                     if($q_titleError=="" && $q_descError==""){
                         
@@ -58,15 +58,16 @@
                             $stmt=mysqli_prepare($conn,$sql);
                             mysqli_stmt_bind_param($stmt,"sss",$q_title,$q_desc,$u_id);
                             $result=mysqli_stmt_execute($stmt);
-                            // echo $sql;
 
-                            // $result=mysqli_query($conn,$sql);
-                            // print($result);
+                           
+
+                            
                             if($result==1){
                                     echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <strong>Success!</strong> Your post was submiited . Wait for comunity to respond.
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                   </div>';
+                                   //updating user_question field
                             }
                             else{
                                 echo "Here";
@@ -105,42 +106,64 @@
                         <h4 class="modal-title">Asking Good Question</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    
+
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <h6> You’re ready to ask your  question and the community is here to help! To get you the best answers  with specific coding, algorithm, or language problems.<br><br>Avoid asking opinion-based questions., we’ve provided some guidance:<br><br>Before you post, search the site to make sure your question hasn’t been answered. </h6>
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        <code>1.</code> Summarize your problem
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"><ul><li><code>Include details about your goal</code></li><li><code>Describe expected and actual results</code></li><li><code>Include any error messages</code></li></ul></div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-      <code>2.</code> Describe what you have tried
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Show what you’ve tried and tell us what you found (on this site or elsewhere) and why it didn’t meet your needs. You can get better answers when you provide research.</div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-      <code>3.</code> Show some code
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">When appropriate, share the minimum amount of code others need to reproduce your problem (also called a minimum, reproducible example).</div>
-    </div>
-  </div>
-</div>
+                        <h6> You’re ready to ask your question and the community is here to help! To get you the best
+                            answers with specific coding, algorithm, or language problems.<br><br>Avoid asking
+                            opinion-based questions., we’ve provided some guidance:<br><br>Before you post, search the
+                            site to make sure your question hasn’t been answered. </h6>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        <code>1.</code> Summarize your problem
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><code>Include details about your goal</code></li>
+                                            <li><code>Describe expected and actual results</code></li>
+                                            <li><code>Include any error messages</code></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                        <code>2.</code> Describe what you have tried
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Show what you’ve tried and tell us what you found (on
+                                        this site or elsewhere) and why it didn’t meet your needs. You can get better
+                                        answers when you provide research.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                        <code>3.</code> Show some code
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">When appropriate, share the minimum amount of code
+                                        others need to reproduce your problem (also called a minimum, reproducible
+                                        example).</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Modal footer -->

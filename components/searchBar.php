@@ -1,9 +1,13 @@
 <div class="search">
-    <div class="input-group mb-3">
+    <form action="../pages/search_profile.php" class="input-group mb-3" method="GET">
+
+
         <input type="text" class="form-control" placeholder="Find User" aria-label="Recipient's username"
-            aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-    </div>
+            name="searchuser" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+
+
+    </form>
 
     <div class="search-users">
 
@@ -46,9 +50,9 @@
 
     <div class="card" style="width: 17rem; margin: 3% 0;">
         <div class="card-body">
-        
+
             <p class="card-text">Get in touch email us at <strong>questdeck.noreply@gmail.com</strong>.</p>
-           
+
         </div>
     </div>
 

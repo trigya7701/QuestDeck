@@ -90,6 +90,7 @@
         <strong>Success!</strong> Question removed from bookmark posts .
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
+         //updating user_answer field
        }
        else{
         echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -129,7 +130,7 @@
                 }
 
                 ?>
-                
+
             </form>
         </div>
 

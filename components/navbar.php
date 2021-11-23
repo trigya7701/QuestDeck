@@ -9,29 +9,32 @@
     $flag=1;
   }
 ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="../Styles/navbar.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 <nav class="navbar navbar-expand-lg   navbar-theme ">
-  <div class="container-fluid">
-    <a class="navbar-brand navbar-content" href="../Pages/home.php">QuestDeck</a>
-  
-    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon navbar-toggle-btn"><i class="bi bi-list"></i></span>
-    </button>
-    <div class="collapse navbar-collapse navbar-header" id="navbarSupportedContent">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-content" href="../Pages/home.php">QuestDeck</a>
 
-      <form class="d-flex navbar-form">
-          
-        <input class="form-control me-2 navbar-searchbar" type="search" placeholder="Search Posts" aria-label="Search">
-        <button class="btn btn-light btn-sm" type="submit">Search</button>
-      </form>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active navbar-content" aria-current="page" href="../Pages/home.php">Home</a>
-          
-        </li>
-        <?php
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon navbar-toggle-btn"><i class="bi bi-list"></i></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-header" id="navbarSupportedContent">
+
+            <form class="d-flex navbar-form" action="../pages/search.php" method="GET">
+
+                <input class="form-control me-2 navbar-searchbar" type="search" placeholder="Search Posts"
+                   name="query" aria-label="Search">
+                <button class="btn btn-light btn-sm" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active navbar-content" aria-current="page" href="../Pages/home.php">Home</a>
+
+                </li>
+                <?php
           if ($flag==1)
           {
             echo '<li class="nav-item">
@@ -45,10 +48,10 @@
           </li>';
           }
         ?>
-        <li class="nav-item">
-          <a class="nav-link navbar-content" href="../Pages/about.php">About Us</a>
-        </li>
-        <?php
+                <li class="nav-item">
+                    <a class="nav-link navbar-content" href="../Pages/about.php">About Us</a>
+                </li>
+                <?php
           if ($flag==1)
           {
             echo '<li class="nav-item dropdown">
@@ -70,12 +73,12 @@
           }
         ?>
 
-    
 
-        
-        
-      </ul>
-      
+
+
+
+            </ul>
+
+        </div>
     </div>
-  </div>
 </nav>
