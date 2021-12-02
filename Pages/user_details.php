@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,28 +9,24 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../Styles/profile.css">
-    <script src="../Scripts/editprofile.js"></script>
 </head>
 
 <body>
     <?php
         include "../components/navbar.php";
-        if($flag==0)
-        {
-          header("Location:home.php");
-        }
     ?>
     <?php
     $flag=0;
     $flag2=0;
       include "connection.php";
-      $u_id=$_SESSION["Id"];
+      $u_id=$_GET["u_id"];
+    //   $u_id=$_SESSION["Id"];
       $sql="SELECT * FROM users WHERE user_id='$u_id'";
       $result=mysqli_query($conn,$sql);
       $data=mysqli_fetch_assoc($result);
       mysqli_close($conn);
     ?>
-    <?php
+    <!-- <?php
       if(isset($_POST["save"]))
       {
         $flag=1;
@@ -100,8 +95,8 @@
         $result=mysqli_query($conn,$sql);
         mysqli_close($conn);
       }
-    ?>
-    <?php
+    ?> -->
+    <!-- <?php
       if($flag==1)
       {
           include "connection.php";
@@ -111,12 +106,7 @@
           $data=mysqli_fetch_assoc($result);
           mysqli_close($conn);
       }
-    ?>
-    <div class="edit">
-        <button type="button" onclick="edit()" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i> Edit
-            Profile</button>
-        <!-- <input type="button" onclick="edit()" value="Edit Profie"> -->
-    </div>
+    ?> -->
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-4 col-5 ">

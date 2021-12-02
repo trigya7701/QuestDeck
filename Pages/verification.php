@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../Styles/verification.css">
 </head>
 <body>
+  
   <?php
     if(isset($_POST["Submit"]) && isset($_SESSION["otp"]))
     {
@@ -41,14 +42,27 @@
           $uname=$_SESSION["uname"];
           $email=$_SESSION["email"];
           $password=hash('sha256',$_SESSION["password"]);
-          $sql="INSERT INTO users(user_mainname,user_name,user_email,user_password,user_question,user_answer,user_rept) VALUES ('$fname','$uname','$email','$password',0,0,0)";
+          $profile=addslashes(file_get_contents("../Images/profile_picture.png"));
+          $sql="INSERT INTO users(user_mainname,user_name,user_email,user_password,user_profile,user_question,user_answer,user_rept) VALUES ('$fname','$uname','$email','$password','$profile',0,0,0)";
           $result=mysqli_query($conn,$sql);
           // session_unset
+          unset($_SESSION["fname"],$_SESSION["uname"],$_SESSION["password"],$_SESSION["otp"]);
           header("Location:loginform.php");
       }
       // foreach($otp as $i)
       // {
       //   echo $i;
+      // }
+    }
+    else
+    {
+      if(isset($_SESSION["Id"]))
+      {
+        header("Location:home.php");
+      }
+      // else
+      // {
+      //   header("Location:loginform.php");
       // }
     }
   ?>
@@ -57,12 +71,12 @@
     An One Time Password(OTP) is sent your Email Address.<br>Please Enter the OTP to get registered
     <form action="" method="post">
     <div class="fields">
-        <input type="text" name="first">
-        <input type="text" name="second">
-        <input type="text" name="third">
-        <input type="text" name="fourth">
-        <input type="text" name="fifth">
-        <input type="text" name="sixth">
+        <input type="text" name="first" maxlength=1>
+        <input type="text" name="second" maxlength=1>
+        <input type="text" name="third" maxlength=1>
+        <input type="text" name="fourth" maxlength=1>
+        <input type="text" name="fifth" maxlength=1>
+        <input type="text" name="sixth" maxlength=1>
     </div>
     <input type="submit" value="Submit" name="Submit">
     </form>
