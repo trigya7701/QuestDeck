@@ -1,6 +1,5 @@
 <?php
 
-    
     $q_id=$_GET['q_id'];
     
     include '../pages/connection.php';
@@ -40,27 +39,27 @@
                     <small class="text-muted"><i>Posted on <?php echo $row["c_timestamp"]; ?></i></small>
                 </h5>
                 <p><?php echo $row["c_desc"];?></p>
-               
-                <!-- <form action="" method="POST"> -->
+                <form action="" method="POST">
                     <?php
                 if($flag==1)
-                // <input type="hidden" name="likebtn" value='.$row["c_id"].'></input>
-                // <input type="hidden" name="likeq" value='.$q_id.'></input>
                 {
-                    echo '<a href="./like.php?q_id='.$q_id.'&c_id='.$row["c_id"].'"><button name="like" type="submit" class="btn btn-light btn-sm position-relative">
+                    echo '<button name="like" type="submit" class="btn btn-light btn-sm position-relative">
                         <img src="../images/like-icon.png" alt="Like Icon" />
-                        <span class="badge bg-danger"></a>';
-                       
-                            
-
-                            
-                        
+                        <span class="badge bg-danger">';
+                        if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["like"])){
+                            $newLikes=$row["c_likes"]+1;
+                            $id=$row["c_id"];
+                            $sql1="UPDATE `comments` SET `c_likes` ='$newLikes'
+                            WHERE `comments`.`c_id` = '$id'";
+                            $result1=mysqli_query($conn,$sql1);
+                            $row['c_likes']=$row['c_likes']+1;
+                        }
                     echo $row['c_likes'].'
                         </span>
                     </button>';
                 }
                 ?>
-                <!-- </form> -->
+                </form>
 
             </div>
 
@@ -68,10 +67,10 @@
         </div>
      <?php
         }
-    }
+
 
         
-    
+    }
     else{
         echo'<div class="container mt-3">
                 <div class="mt-4 p-5 bg-light text-black rounded">
