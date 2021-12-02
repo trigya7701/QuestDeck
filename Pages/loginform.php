@@ -80,7 +80,14 @@
                             {
                                 if($_POST["email"]!='')
                                 {
+                                    if(preg_match("^[A-Za-z0-9._%+-]+@somaiya.edu$^",$_POST["email"]))
+                                    {
                                         $email=0;
+                                    }
+                                    else
+                                    {
+                                        echo "<p>This email is not of required domain</p>";
+                                    }
                                 }
                                 else
                                 {
@@ -240,12 +247,19 @@
             </div>
             <div class="main2" id="signin">
                 <div class="lefts">
-                    <h1>Welcome</h1>
+                <h1>Welcome Back!</h1>
+                    <h3>To keep Connected with us<br>Please login with the correct credentials</h3>
                     <input type="submit" value="SignUp"  onclick="signup()">
                 </div>
                 <div class="rights">
                     <h2>Sign In</h2>
-                    <?php
+                    <form action="" method="POST">
+                        <!-- <p>Enter Your Email</p> -->
+                        <label for="email">
+                            Enter Your Email
+                        </label>
+                        <input type="email" name="email" placeholder=" Email">
+                        <?php
                             $username=1;$emaila=1;
                             if( isset($_POST["signin"]))
                             {
@@ -258,6 +272,13 @@
                                     echo "<p>Please Enter your Email</p>";
                                 }
                             }
+                        ?>
+                        <!-- <p>Enter Your Password</p> -->
+                        <label for="passwword">
+                            Enter Your Password
+                        </label>
+                        <input type="password" name="password" placeholder=" Password">
+                        <?php
                             if( isset($_POST["signin"]))
                             {
                                 if($_POST["password"]!='')
@@ -270,11 +291,6 @@
                                 }
                             }
                         ?>
-                    <form action="" method="POST">
-                        <p>Enter Your Email</p>
-                        <input type="email" name="email" placeholder=" Email">
-                        <p>Enter Your Password</p>
-                        <input type="password" name="password" placeholder=" Password">
                         <input type="submit" class="btn" value="SignUp" name="signin" >
                         <?php
                             if(isset($_POST["signin"]))
@@ -295,7 +311,12 @@
                                         {
                                             $_SESSION["Id"]=$row["user_id"];
                                             $_SESSION["name"]=$row["user_mainname"];
-                                            $_SESSION['email']=$row["user_email"];
+                                            date_default_timezone_set("Asia/Kolkata");
+                                            $date=date('Y-m-d h:i:s');
+                                            $sql="UPDATE users SET user_lastvisit='$date' WHERE user_email='$emailer'";
+                                            
+                                            $result=mysqli_query($conn,$sql);
+                                            mysqli_close($conn);
                                             header("Location:home.php");
                                         } 
                                         else

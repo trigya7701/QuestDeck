@@ -24,13 +24,13 @@
               if($resultdisplayUser){
 
                 while($row=mysqli_fetch_assoc($resultdisplayUser)){
-                  echo' <li class="list-group-item d-flex justify-content-between align-items-start">
+                  echo' <a href="./user_details.php?u_id='.$row["user_id"].'"><li class="list-group-item d-flex justify-content-between align-items-start">
                               <div class="ms-2 me-auto">
                                   <div class="fw-bold">'.$row["user_mainname"].'</div>
                                   '.$row["user_name"].'
                               </div>
                               <span class="badge bg-primary rounded-pill">'.$row["user_rept"].'</span>
-                          </li>';
+                          </li></a>';
                 }
               }
               else{

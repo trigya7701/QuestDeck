@@ -9,6 +9,7 @@
 .main{
     display: flex;
     margin:5% 0;
+    width: 100%;
 }
 
 /* Posts section */
@@ -47,4 +48,9 @@ Search Bar section */
 .search-users{
     background-color: #F8F9FA;
     padding: 2% 3%;
+}
+.space
+{
+    height: 40px;
+    width: 100%;
 }

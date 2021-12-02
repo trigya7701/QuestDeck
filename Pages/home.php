@@ -25,6 +25,10 @@
             {
               include '../components/bookmark.php';
             }
+            else
+            {
+              echo "<div class='space'></div>";
+            }
             ?>
             
 

@@ -68,6 +68,12 @@ input
 {
     margin: 10px 0px;
 }
+form p
+{
+    color: red;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
 input[type="submit"]
 {
     padding: 10px 10px;
@@ -103,6 +109,7 @@ input[type="submit"]:focus
     opacity: 0;
     height: 100%;
     transition: 1.5s ease-in-out;
+    color: white;
 }
 .rights
 {
