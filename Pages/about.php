@@ -102,11 +102,13 @@
                 <div class="back">
                 </div>
                 <div class="img">
-                    <img src="../Images/test.jpg" alt="image" srcset="">
+                    <img src="../Images/trigya.jpeg" alt="image" srcset="">
                 </div>
                 <div class="details">
-                    <h1>Trigya</h1>
-                    <p>Trigya is a coder Who lives in srinagar. Follow him to get real time updates of srinagar
+                    <h1>Trigya Roy</h1>
+                    <p> When I’m old and dying, I plan to look back on my life and say ‘wow, that was an adventure,’ not ‘wow, I sure felt safe
+
+
                     </p>
                 </div>
                 <div class="social">
@@ -121,12 +123,11 @@
                 <div class="back">
                 </div>
                 <div class="img">
-                    <img src="../Images/test.jpg" alt="image" srcset="">
+                    <img src="../Images/ramavtar.jpeg" alt="image" srcset="">
                 </div>
                 <div class="details">
                     <h1>Ramavtar</h1>
-                    <p>Ramavtar is a coder. Who lives near Trigya but trigya is not giving party of EEEE exam where he
-                        scored very good marks </p>
+                    <p>Ramavtar Yadav, Passionate about coding, Currently working on PHP, HTML, CSS, JS, FLUTTER, etc. </p>
                 </div>
                 <div class="social">
                     <h1><i class="bi bi-linkedin"></i></h1>

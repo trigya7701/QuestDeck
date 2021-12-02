@@ -57,7 +57,7 @@
                         else{
 
                             while($row=mysqli_fetch_assoc($resultsearch)){
-                                $url="view_post.php?q_id=".$row['user_id'];
+                                $url="user_details.php?u_id=".$row['user_id'];
                                 echo'<a href="'.$url.'" class="list-group-item list-group-item-action ">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">'.$row['user_mainname'].'</h5>
