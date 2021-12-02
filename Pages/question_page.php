@@ -31,9 +31,9 @@
                 
                     if($q_title!=''){
                         
-                        if(!preg_match("^[a-zA-Z\s]+$^",$q_title)){
-                            $q_titleError="* Please enter a valid question title";
-                        }
+                      
+                            $q_titleError="";
+                        
                         
                     }
                     else{
@@ -42,9 +42,9 @@
 
                     if($q_desc!=''){
                         
-                        if(!preg_match("^[a-zA-Z\s]+$^",$q_desc)){
-                            $q_descError="* Please enter a valid question description";
-                        }
+                       
+                            $q_descError="";
+                        
                         
                     }
                     else{
@@ -54,10 +54,18 @@
                     if($q_titleError=="" && $q_descError==""){
                         
                             $u_id=$_SESSION['Id'];
+                            $q_title=str_replace("<","&lt;",$q_title);
+                            $q_title=str_replace(">","&gt;",$q_title);
+
+                            $q_desc=str_replace("<","&lt;",$q_desc);
+                            $q_desc=str_replace(">","&gt;",$q_desc);
+
                             $sql="INSERT INTO `questions` ( `q_title`, `q_desc`, `user_id`) VALUES ( ?,?,?)";
                             $stmt=mysqli_prepare($conn,$sql);
                             mysqli_stmt_bind_param($stmt,"sss",$q_title,$q_desc,$u_id);
                             $result=mysqli_stmt_execute($stmt);
+
+
 
                            
 
@@ -68,6 +76,14 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                   </div>';
                                    //updating user_question field
+
+
+                                    $getUserQuesSql="SELECT * FROM `users` WHERE `user_id`='$u_id'";
+                                    $getUSerQuesResult=mysqli_query($conn,$getUserQuesSql);
+                                    $row=mysqli_fetch_assoc($getUSerQuesResult);
+                                    $ques=$row['user_question']+1;
+                                   $updateQuesSql="UPDATE `users` SET user_question='$ques' WHERE `user_id`='$u_id'";
+                                   $updateQuesResult=mysqli_query($conn,$updateQuesSql);
                             }
                             else{
                                 echo "Here";
@@ -241,6 +257,7 @@
                 </div>
             </div> -->
     </div>
+    <?php include '../components/footer.php';  ?>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

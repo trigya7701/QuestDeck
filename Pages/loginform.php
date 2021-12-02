@@ -295,6 +295,7 @@
                                         {
                                             $_SESSION["Id"]=$row["user_id"];
                                             $_SESSION["name"]=$row["user_mainname"];
+                                            $_SESSION['email']=$row["user_email"];
                                             header("Location:home.php");
                                         } 
                                         else

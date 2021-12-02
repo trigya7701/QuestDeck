@@ -23,6 +23,9 @@
             $c_descError="* Please enter some text";
         }
         else{
+            $c_desc=str_replace("<","&lt;",$c_desc);
+            $c_desc=str_replace(">","&gt;",$c_desc);
+
             $sql="INSERT INTO `comments` ( `c_desc`, `user_id`, `q_id`, `c_likes`)
              VALUES ('$c_desc', '$u_id', '$q_id', '0')";
 
@@ -33,6 +36,12 @@
                         <strong>Success!</strong> Your comment was posted . Thanks for contributing.
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>';
+                    $getUserQuesSql="SELECT * FROM `users` WHERE `user_id`='$u_id'";
+                    $getUSerQuesResult=mysqli_query($conn,$getUserQuesSql);
+                    $row=mysqli_fetch_assoc($getUSerQuesResult);
+                    $ans=$row['user_answer']+1;
+                    $updateQuesSql="UPDATE `users` SET user_answer='$ans' WHERE `user_id`='$u_id'";
+                    $updateQuesResult=mysqli_query($conn,$updateQuesSql);
             }
             else{
                 echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -91,6 +100,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
          //updating user_answer field
+
+        
        }
        else{
         echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
