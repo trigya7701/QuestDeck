@@ -107,8 +107,6 @@
                 <div class="details">
                     <h1>Trigya Roy</h1>
                     <p> When I’m old and dying, I plan to look back on my life and say ‘wow, that was an adventure,’ not ‘wow, I sure felt safe
-
-
                     </p>
                 </div>
                 <div class="social">

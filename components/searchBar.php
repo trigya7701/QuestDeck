@@ -18,7 +18,7 @@
             <?php
               include "../pages/connection.php";
 
-              $sqldisplayUsers="SELECT * FROM `users` ORDER BY user_rept LIMIT 5";
+              $sqldisplayUsers="SELECT * FROM `users` ORDER BY user_rept DESC LIMIT 5";
               $resultdisplayUser=mysqli_query($conn,$sqldisplayUsers);
 
               if($resultdisplayUser){

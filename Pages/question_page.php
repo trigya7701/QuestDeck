@@ -82,7 +82,8 @@
                                     $getUSerQuesResult=mysqli_query($conn,$getUserQuesSql);
                                     $row=mysqli_fetch_assoc($getUSerQuesResult);
                                     $ques=$row['user_question']+1;
-                                   $updateQuesSql="UPDATE `users` SET user_question='$ques' WHERE `user_id`='$u_id'";
+                                    $rep=ceil(($row["user_answer"])/2+($ques)/3);
+                                   $updateQuesSql="UPDATE `users` SET user_question='$ques', user_rept='$rep' WHERE `user_id`='$u_id'";
                                    $updateQuesResult=mysqli_query($conn,$updateQuesSql);
                             }
                             else{
