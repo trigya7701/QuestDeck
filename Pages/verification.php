@@ -62,6 +62,7 @@
       }
       // else
       // {
+      //   if(isset)
       //   header("Location:loginform.php");
       // }
     }

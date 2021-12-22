@@ -49,7 +49,7 @@
                 {
                     echo '<a href="./like.php?q_id='.$q_id.'&c_id='.$row["c_id"].'"><button name="like" type="submit" class="btn btn-light btn-sm position-relative">
                         <img src="../images/like-icon.png" alt="Like Icon" />
-                        <span class="badge bg-danger"></a>';
+                        <span class="badge bg-danger">';
                        
                             
 
@@ -57,7 +57,8 @@
                         
                     echo $row['c_likes'].'
                         </span>
-                    </button>';
+                    </button>
+                    </a>';
                 }
                 ?>
                 <!-- </form> -->

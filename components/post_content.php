@@ -9,7 +9,7 @@
     $result=mysqli_query($conn,$sql);
 
     if($result){
-        $row=mysqli_fetch_assoc($result);
+        $rowQuestion=mysqli_fetch_assoc($result);
     }
 
     $c_descError="";
@@ -26,10 +26,15 @@
             $c_desc=str_replace("<","&lt;",$c_desc);
             $c_desc=str_replace(">","&gt;",$c_desc);
 
-            $sql="INSERT INTO `comments` ( `c_desc`, `user_id`, `q_id`, `c_likes`)
-             VALUES ('$c_desc', '$u_id', '$q_id', '0')";
-
-            $result=mysqli_query($conn,$sql);
+            // $sql="INSERT INTO `comments` ( `c_desc`, `user_id`, `q_id`, `c_likes`)
+            //  VALUES ('$c_desc', '$u_id', '$q_id', '0')";
+            
+            $sql="INSERT INTO `comments` ( `c_desc`, `user_id`, `q_id`, `c_likes`) VALUES ( ?,?,?,?)";
+                $stmt=mysqli_prepare($conn,$sql);
+                $likes="0";
+                mysqli_stmt_bind_param($stmt,"ssss",$c_desc,$u_id,$q_id,$likes);
+                $result=mysqli_stmt_execute($stmt);
+                            // $result=mysqli_query($conn,$sql);
 
             if($result){
                 echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -115,15 +120,22 @@
 
 
 ?>
-
+<?php 
+            $user_id=$rowQuestion['user_id'];
+             $getUserSql="SELECT * FROM `users` WHERE `user_id`='$user_id'";
+                    $getUSerResult=mysqli_query($conn,$getUserSql);
+                    $rowUser=mysqli_fetch_assoc($getUSerResult); ?>
 
 <div class="container">
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title"><?php  echo $row['q_title']; ?></h5>
-            <p class="card-text"><?php  echo $row['q_desc']; ?></p>
-            <p class="card-text"><small class="text-muted">Posted on <?php  echo $row['q_timestamp']; ?> </small></p>
+            <h5 class="card-title"><?php  echo $rowQuestion['q_title']; ?></h5>
+            <p class="card-text"><?php  echo $rowQuestion['q_desc']; ?></p>
+            <p class="card-text"><small class="text-muted">Posted on <?php  echo $rowQuestion['q_timestamp']; ?> </small></p>
+            <p class="card-text"><small class="text-muted">Posted by <a href=<?php echo "./user_details.php?u_id=".$user_id;?>><strong><?php echo $rowUser['user_name']; ?>
+                </small></strong></p></a>
+                
             <form action="" method="POST">
 
                 <?php
