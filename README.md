@@ -12,7 +12,7 @@ forum and comments to that post.
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JS,BOOTSTRAP 
+**Client:** HTML, CSS, JS,BOOTSTRAP <br>
 **Server:** PHP , My SQL
 
 ## Screenshots
@@ -25,6 +25,7 @@ forum and comments to that post.
  
  <br>
  <br>
+ 
 ### Post Page
  <div float="left">
 <img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck2.jpg.png" width=480>
@@ -32,6 +33,7 @@ forum and comments to that post.
   </div>
   <br>
   <br>
+  
 ### Search Page
  <div float="left">
 <img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck3.jpg.png" width=480>
