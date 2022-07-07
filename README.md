@@ -12,26 +12,54 @@ forum and comments to that post.
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JS,BOOTSTRAP, 
+**Client:** HTML, CSS, JS,BOOTSTRAP 
 **Server:** PHP , My SQL
 
 ## Screenshots
 
 ### Home Page
 <div float="left">
-<img src="https://github.com/trigya7701/Plan-My-Trip/blob/d064771b0e9f2901c170824bbfdfc082c42926c0/images/readme1.JPG" width=480>
-<img src="https://github.com/trigya7701/Plan-My-Trip/blob/d064771b0e9f2901c170824bbfdfc082c42926c0/images/readme2.JPG" width=480>
+<img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck1.jpg.png" width=480>
+
  </div>
  
  <br>
  <br>
+### Post Page
  <div float="left">
-<img src="https://github.com/trigya7701/Plan-My-Trip/blob/d064771b0e9f2901c170824bbfdfc082c42926c0/images/readme3.JPG" width=480>
-<img src="https://github.com/trigya7701/Plan-My-Trip/blob/d064771b0e9f2901c170824bbfdfc082c42926c0/images/readme4.JPG" width=480>
+<img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck2.jpg.png" width=480>
+
   </div>
   <br>
   <br>
-<img src="https://github.com/trigya7701/Plan-My-Trip/blob/d064771b0e9f2901c170824bbfdfc082c42926c0/images/readme7.JPG" width=500>
+### Search Page
+ <div float="left">
+<img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck3.jpg.png" width=480>
 
+  </div>
+  <br>
+  <br>
 
+### Login Page
+ <div float="left">
+<img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck4.jpg.png" width=480>
 
+  </div>
+  <br>
+  <br>
+  
+  ### Create Post Page
+ <div float="left">
+<img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck5.jpg.png" width=480>
+
+  </div>
+  <br>
+  <br>
+  
+  ### Profile Page
+ <div float="left">
+<img src="https://github.com/trigya7701/QuestDeck/blob/111cb01c1be1cd5b19250f74dc38d48edb34a786/Images/QuestDeck6.jpg.png" width=480>
+
+  </div>
+  <br>
+  <br>
